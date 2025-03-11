@@ -10,9 +10,8 @@ function adicionarAmigo() {
   }
   document.querySelector("input").value = "";
 }
-
 function exibirTextoNaTela() {
-  let lista = document.querySelector("ul");
+  let lista = document.querySelector("#listaAmigos");
   lista.innerHTML = "";
   listaDeAmigos.forEach((amigo) => {
     let item = document.createElement("li");
@@ -22,5 +21,12 @@ function exibirTextoNaTela() {
 }
 
 function sortearAmigo(){
-  
+  let indiceSorteado=Math.floor(Math.random()*listaDeAmigos.length)
+  let amigoSorteado = listaDeAmigos[indiceSorteado]
+  if(amigoSorteado){
+   let exibirResultado =  document.querySelector('#resultado')
+   exibirResultado.innerHTML= `O amigo secreto sorteado foi: ${amigoSorteado}`
+  }
+  let lista = document.querySelector("#listaAmigos");
+  lista.innerHTML = "";
 }
